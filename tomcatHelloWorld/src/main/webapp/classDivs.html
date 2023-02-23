@@ -1,0 +1,126 @@
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+<head>
+    <title>
+        Get the coordinates of a mouse click?
+    </title>
+  <style>
+	#c { 
+	
+	  width: 80%;			
+	  margin: auto;
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;		
+		
+	}
+	.link {		
+		color: blue;
+	}
+	
+	.imgDiv{
+		position: relative;
+		
+	}
+	
+	a.ahr{
+		text-decoration:none;
+	}
+
+	#d{
+	    background-color:white;
+		border-radius: 6px;
+		min-width: 200px;	
+		text-align: center;
+		border: 1px;
+		display: none;
+		
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #ddd;
+	
+	    text-shadow: 0 1px 0 #f3f3f3;
+	    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    box-shadow: 0 0 12px rgba(0,0,0,.6);
+	}
+	
+	#dictDiv{
+
+		display:none;
+	    height: 100px;
+	    
+	    position: fixed;
+	    z-index: 1;
+	    top: 0;
+	    left: 0;
+	    background-color: rgb(0,0,0);
+	    background-color: rgba(0,0,0, -0.9);	    
+	    
+	}
+
+</style>	
+</head>
+  
+<body id="body">
+      
+	
+	<span id="1" class='link'>&nbsp;
+		aaaa
+	</span>
+	<div id="2" class='link'>&nbsp;
+		<img src="emi.png"/>
+		
+	</div>
+
+	<div id="dictDiv">
+		<div id="d"></div>
+	</div>	
+  
+    <script type="text/javascript">
+
+
+	 var x = document.getElementsByClassName('link');
+	 for (i = 0; i < x.length; i++) {
+	   x[i].addEventListener('click', function(event) {
+	   //event.stopPropagation();
+	   var clickedEl = event.target;
+	   //isnert ms & safari comp code
+	   var ovr = document.getElementById('dictDiv');
+	   ovr.style.display='block';
+	   ovr.style.position='absolute';
+	   ovr.style.top=event.pageY;
+	   ovr.style.left=event.pageX;	   
+	   
+	   var d = document.getElementById('d');	   
+	   d.style.display='block';
+	   /*d.style.position='absolute';*/
+	   d.style.top=event.pageY;
+	   d.style.left=event.pageX;
+	   
+	   //bhr(clickedEl.id);
+		var d = document.getElementById('d');
+		d.innerHTML='Here'	   
+
+	   
+	 },false);
+	 }
+
+	var ovr = document.getElementById('dictDiv'); 	    
+	ovr.addEventListener('click', function(event) {
+		  if (event.target !== this)
+			    return;
+		  else
+			  {
+				var ovr = document.getElementById('dictDiv');
+				var d = document.getElementById('d');
+				ovr.style.display='none';
+				d.style.display='none';
+			  }
+			  
+	});			
+
+    </script>
+</body>
+  
+</html>

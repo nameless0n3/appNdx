@@ -1,0 +1,376 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>manual popup</title>
+
+
+    <style>
+
+        .link {
+            color: blue;
+        }
+
+
+
+        a.ahr {
+            text-decoration: none;
+        }
+
+        #d {
+            background-color: white;
+            border-radius: 6px;
+            min-width: 200px;
+            text-align: center;
+            border: 1px;
+            display: none;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ddd;
+            text-shadow: 0 1px 0 #f3f3f3;
+            -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+            -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+            box-shadow: 0 0 12px rgba(0,0,0,.6);
+        }
+
+        #overlay {
+            display: none;
+            height: 100px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, -0.9);
+        }
+    </style>
+</head>
+<body id="body">
+
+    The 3rd Maxwell's Equation<br/>
+
+    <p align="justify">
+        On this page, we'll explain the meaning of the 3rd of Maxwell's Equations,
+        <b>Faraday's Law</b>, which is given in Equation [1]:
+    </p>
+    <p>
+        <table>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th><img src="faradays-law.gif" alt="farday's law"></th>
+                    <th align="right"><font size="4">[Equation 1]</font></th>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+
+    <p align="justify">
+        Faraday was a scientist experimenting with circuits and magnetic coils way back in the
+        1830s.  His experiment setup, which led to Farday's Law, is shown in Figure 1:
+
+    </p>
+    
+    
+        <img src="experiment.gif" alt="faraday's experiment"><p>
+            <font color="blue">Figure 1.  Experimental Setup For Faraday.</font>
+        </p>
+    
+    <p align="justify">
+        The experiment itself is somewhat simple.  When the battery is disconnected,
+        we have no electric current flowing through the wire.  Hence there is no magnetic
+        flux induced within the Iron (Magnetic Core).  The Iron is like a highway for
+        Magnetic Fields - they flow very easily through magnetic material.  So the purpose
+        of the core is to create a path for the Magnetic Flux to flow.
+
+    </p>
+    <p align="justify">
+        When the switch is closed, the electric current will flow within the wire
+        attached to the battery.  When this current flows, it has an associated magnetic
+        field (or magnetic flux) with it.  When the wire wraps around the left side of the
+        magnetic core (as shown in <span class="link" id="fig1">
+        Figure 1</span>), a magnetic field (magnetic flux) is induced
+        within the core.  This flux travels around the core.  So the Magnetic Flux
+        produced by the wired coil on the left exists within the wired coil on the right,
+        which is connected to the ammeter.
+
+</p>
+    <p align="justify">
+        Now, a funny thing happens, which Faraday observed.  When he closed the switch,
+        then current would begin flowing and the ammeter would spike one way (say measuring
+        +10 Amps on the other side).  But this was very brief, and the current on the
+        right coil would go to zero.  When the switch was opened, the measured current
+        would spike to the other side (say -10 Amps would be measured), and then
+        the measured current on the right side would again be zero.
+
+    </p>
+
+    <p align="justify">
+        Faraday figured out what was happening.  When the switch was initially changed
+        from open to closed, the magnetic flux within the magnetic core increased
+        from zero to some maximum number (which was a constant value, versus time).
+        When the flux was increasing, there existed an induced current on the opposite
+        side.
+
+    </p>
+
+    <p align="justify">
+        Similarly, when the switch was opened, the magnetic flux in the core would decrease
+        from it's constant value back to zero.  Hence, a decreasing flux within the
+        core induced an opposite current on the right side.
+
+    </p>
+    <p align="justify">
+        Faraday figured out that a changing Magnetic Flux within a circuit (or closed loop
+        of wire) produced an induced <i>EMF</i>, or voltage within the circuit.  He
+        wrote this as:
+
+
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="lenz-law.gif" alt="lenz's law"></TH>
+                <TH align="right"><font size="4">[Equation 2]</font></TH>
+            </TR>
+        </Table>
+    <P align="justify">
+
+        In <span class="link" id="eq2">Equation [2]</span>, <img src="flux.gif" alt="magnetic flux"> is the Magnetic Flux
+        within a circuit, and <i>EMF</i> is the electro-motive force, which is basically
+        a voltage source.  <span class="link" id="eq2">Equation [2]</span> then says that the induced voltage in a circuit
+        is the opposite of the time-rate-of-change of the magnetic flux.
+        For more information on derivatives, see the
+        <a href="http://www.maxwells-equations.com/math/partial-derivative.php">partial derivatives page</a>.
+    </P>
+
+    <H3>Deriving Faraday's Law</H3>
+
+    <p align="justify">
+
+        Deriving Faraday's Law<br>
+
+        Now after the experiment in <span class="link" id="fig1">Figure 1</span>, we have the experimental result of <span class="link" id="eq2">Equation [2]</span>,
+        how do we go from this result to the standard form of Farday's Law in <a class="link" id="eq1">Equation [1]</a>?
+        Well, I'm glad you asked. Let's imagine a simple loop, with a time varying <a class="link" id="B">B</a>
+
+
+        We know that the rate of change of the total magnetic flux is equal
+        to the opposite of the <a class="link" id="EMF">EMF</a>, or the electric force within the wire.
+        The total magnetic flux is simply the integral (or sum) of the
+        field over the area enclosed by the wire: field within it: Equation3:
+    </p>
+<P>
+        
+            <img src="circuit-loop.gif" alt="circuit loop for deriving farday's law"><P>
+                <FONT color="blue">Figure 1.  A Loop of Wire, With a Magnetic Flux Density <b>B(t)</b> within it.</FONT>
+        
+
+    <p align="justify">
+        We know that the rate of change of the total magnetic flux is equal to the opposite
+        of the <i>EMF</i>, or the electric force within the wire.  The total magnetic flux
+        is simply the integral (or sum) of the <b>B</b> field over the area enclosed by the wire:
+    </p>
+
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="magnetic-flux.gif" alt="magnetic flux definition"></TH>
+                <TH align="right"><font size="4">[Equation 3]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        To find the total <i>EMF</i> induced around the whole circuit, we sum up
+        over the length of the wire the <i>EMF</i> produced at each point.  This is known
+        as a line integral.  This is written as:
+
+    </P>
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="emf.gif" alt="electromotive force"></TH>
+                <TH align="right"><font size="4">[Equation 4]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        Now, recall that the
+        <a href="http://maxwells-equations.com/fields/electric.php">Electric Field is directly related to force from electric charges</a>.
+        And Voltage is also defined as the sum (integral) of the Electric Field across a path
+        [recall that the E-field is measured in Volts/meter].  Hence, the E-field is
+        actually the spatial-derivative of voltage (E-field is equal to the rate of change of the voltage with respect to distance).
+        These facts are summed up in the following:
+
+    </P>
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="voltage.gif" alt="voltage rules"></TH>
+                <TH align="right"><font size="4">[Equation 5]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        Hence, Equations <span class="link" id="eq4">[4]</span> and <span class="link" id="eq5">[5]</span> tell us that the differential amount of <i>EMF</i>
+        at any point along the circuit (<i>dEMF</i> in [4]) is equal to the <b>E</b>
+        field at that location.  Therefore:
+
+    </P>
+
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="emf-efield.gif" alt="relationship between EMF and E-field"></TH>
+                <TH align="right"><font size="4">[Equation 6]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        Now, some mathematician named Stokes figured out that integrating (averaging)
+        of a field around a loop is exactly equivalent to integrating the
+        <a href="http://www.maxwells-equations.com/curl/curl.php">curl</a> of the field within
+        the loop.  This should have somewhat of an intuitive truth to you: the curl is
+        the measure of the rotation of a field, so the curl of a vector field within a
+        surface should be related to the integral of a field around a loop that encloses the
+        surface.  If it doesn't make sense, think about it more or just accept the following
+        as truth (because it is true - not just for <b>E</b> fields but for any field):
+
+
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="stokes.gif" alt="stokes' theorem"></TH>
+                <TH align="right"><font size="4">[Equation 7]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        Now we are almost there.  If we replace Farday's Law of <span class="link" id="eq2">
+        Equation [2]</span>, with the
+        terms we found in <span class="link" id="eq3">Equation [3]</span> and <span class="link" id="eq7">Equation [7]</span>, then we get:
+</P>
+
+    <P>
+        <Table>
+            <TR>
+                <TH></TH>
+                <TH><img src="faraday-differential.gif" alt="farday's law in differential form"></TH>
+                <TH align="right"><font size="4">[Equation 8]</font></TH>
+            </TR>
+        </Table>
+    </P>
+    <P align="justify">
+
+        In <span class="link" id="eq8">Equation [8]</span>, we note that if we have two integrals over surfaces, and the
+        surfaces can be however we choose, then the quantities we integrate must also
+        be the same.  And this is how we obtained Faraday's Law in final form, as
+        listed on Maxwell's Equations!
+
+        <H3>Interpretation of Farday's Law</H3>
+    </P>
+
+
+
+
+
+
+
+
+
+
+
+
+                <div id="overlay">
+                    <div id="d"></div>
+                </div>
+
+                <script>
+                    var arr = document.getElementsByClassName('link');
+                    for (i = 0; i < arr.length; i++) {
+                        arr[i].addEventListener('click', function (event) {
+                            //event.stopPropagation();
+                            var clickedEl = event.target;
+                            //isnert ms & safari comp code
+                            var ovr = document.getElementById('overlay');
+                            ovr.style.display = 'block';
+                            ovr.style.position = 'absolute';
+                            ovr.style.top = event.pageY;
+                            ovr.style.left = event.pageX;
+
+                            var d = document.getElementById('d');
+                            d.style.display = 'block';
+                            /*d.style.position='absolute';*/
+                            d.style.top = event.pageY;
+                            d.style.left = event.pageX;
+
+                            //bhr(clickedEl.id);
+                            var d = document.getElementById('d');
+                            d.innerHTML = 'Here';
+                            //d.innerHTML = '<img src="circle.gif"/>';
+                            //d.innerHTML=e;
+                            let rect = clickedEl.getBoundingClientRect();
+                            let x = event.clientX - rect.left;
+                            let y = event.clientY - rect.top;
+                            let selId = clickedEl.id;
+
+
+                            console.log(
+                                "ID: " + selId,
+                                "X: " + x,
+                                "Y: " + y);
+
+
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function () {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    var ovr = document.getElementById('overlay');
+                                    var d = document.getElementById('d');
+                                    var text = this.responseText;
+                                    //ovr.style.width = this.responseText.substring();
+                                    ovr.style.width = parseInt(text.substring(text.indexOf("width='")+7, text.indexOf("' height")));
+                                    //ovr.style.height= this.responseText.json().height;
+                                    ovr.style.height= parseInt(text.substring(text.indexOf("height='")+8, text.indexOf("'/>"))) +20;                           
+                                    document.getElementById("d").innerHTML = text;//this.responseText;
+
+                                }
+                            };
+                            //xhttp.open("GET", "https://localhost:5001/Return/Index?x=" + x + "&y=" + y + "&id=" + selId, true);
+							//xhttp.open("GET", "http://localhost:8080/tomcatHelloWorld/Dictionary?id="+selId, true);
+							xhttp.open("GET", "Dictionary?id="+selId, true);
+                            xhttp.send();
+
+
+                        }, false);
+                    }
+
+                    var ovr = document.getElementById('overlay');
+                    ovr.addEventListener('click', function (event) {
+                        if (event.target !== this){
+
+							return;
+                        }
+                            
+                        else {
+                            var ovr = document.getElementById('overlay');
+                            var d = document.getElementById('d');
+                            ovr.style.display = 'none';
+                            d.style.display = 'none';
+                        }
+
+                    });
+                </script>
+
+
+</body>
+</html>

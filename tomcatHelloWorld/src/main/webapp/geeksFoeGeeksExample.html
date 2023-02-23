@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        How to get the coordinates of a mouse
+        click on a canvas element?
+    </title>
+</head>
+  
+<body>
+    <h1 style="color: green">
+        GeeksforGeeks
+    </h1>
+      
+    <b>
+        How do I get the coordinates of a 
+        mouse click on a canvas element?
+    </b>
+      
+    <p>
+        Click anywhere on the canvas element
+        to get the mouse pointer location.
+    </p>
+      
+    <p>
+        The size of the canvas
+        is a square of 200px.
+    </p>
+      
+    <p>Check the console for the output.</p>
+      
+    <!-- <canvas width="200" height="200" -->
+        <!-- style="background-color: green"> -->
+    <!-- </canvas> -->
+	
+	<div>&nbsp;
+		<img src="force20.png"/><br>
+		<!--a=dV/dt-->
+	</div>	
+  
+    <script type="text/javascript">
+        function getMousePosition(div, event) {
+            let rect = div.getBoundingClientRect();
+            let x = event.clientX - rect.left;
+            let y = event.clientY - rect.top;
+            console.log("Coordinate x: " + x, 
+                        "Coordinate y: " + y);
+        }
+      
+        let divElem = document.querySelector("div");
+          
+        divElem.addEventListener("mousedown", function(e)
+        {
+            getMousePosition(divElem, e);
+        });
+    </script>
+</body>
+  
+</html>

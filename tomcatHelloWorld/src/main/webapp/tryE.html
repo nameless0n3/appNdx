@@ -1,0 +1,131 @@
+
+<!-- saved from url=(0051)https://evening-ocean-97331.herokuapp.com/tryB.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>manul popup</title>
+
+
+  <style>
+
+	.link {		
+		color: blue;
+	}
+	
+
+	
+	a.ahr{
+		text-decoration:none;
+	}
+
+	#d{
+	    background-color:white;
+		border-radius: 6px;
+		min-width: 200px;	
+		text-align: center;
+		border: 1px;
+		display: none;
+		
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #ddd;
+	
+	    text-shadow: 0 1px 0 #f3f3f3;
+	    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    box-shadow: 0 0 12px rgba(0,0,0,.6);
+	}
+	
+	#overlay{
+
+		display:none;
+	    height: 100px;
+	    
+	    position: fixed;
+	    z-index: 1;
+	    top: 0;
+	    left: 0;
+	    background-color: rgb(0,0,0);
+	    background-color: rgba(0,0,0, -0.9);	    
+	    
+	}
+
+</style></head>
+<body id="body">
+
+
+Deriving Faraday's Law<br>
+		
+		Now, we have the experimental result of <span class="link" id="equation2">equation2</span>, 
+	how do we go from this result to the standard form of Farday's Law in <a class="link" id="equation1">equation1</a>? 
+	Well, I'm glad you asked. Let's imagine a simple loop, with a time varying <a class="link" id="B">B</a> 
+
+
+			We know that the rate of change of the total magnetic flux is equal
+			to the opposite of the <a class="link" id="EMF">EMF</a>, or the electric force within the wire.
+			The total magnetic flux is simply the integral (or sum) of the 
+			field over the area enclosed by the wire: field within it: Equation3:
+			
+			
+
+						
+				
+
+		
+	
+
+	<div id="overlay">
+		<div id="d"></div>
+	</div>
+
+	  <script>
+
+
+	 var x = document.getElementsByClassName('link');
+	 for (i = 0; i < x.length; i++) {
+	   x[i].addEventListener('click', function(event) {
+	   //event.stopPropagation();
+	   var clickedEl = event.target;
+	   //isnert ms & safari comp code
+	   var ovr = document.getElementById('overlay');
+	   ovr.style.display='block';
+	   ovr.style.position='absolute';
+	   ovr.style.top=event.pageY;
+	   ovr.style.left=event.pageX;	   
+	   
+	   var d = document.getElementById('d');	   
+	   d.style.display='block';
+	   /*d.style.position='absolute';*/
+	   d.style.top=event.pageY;
+	   d.style.left=event.pageX;
+	   
+	   //bhr(clickedEl.id);
+		var d = document.getElementById('d');
+		d.innerHTML='Here'	   
+
+	   
+	 },false);
+	 }
+
+	var ovr = document.getElementById('overlay'); 	    
+	ovr.addEventListener('click', function(event) {
+		  if (event.target !== this)
+			    return;
+		  else
+			  {
+				var ovr = document.getElementById('overlay');
+				var d = document.getElementById('d');
+				ovr.style.display='none';
+				d.style.display='none';
+			  }
+			  
+	});
+	
+ 
+
+
+
+
+  </script>
+
+
+</body></html>

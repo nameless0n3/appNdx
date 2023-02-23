@@ -1,0 +1,208 @@
+
+<!-- saved from url=(0051)https://evening-ocean-97331.herokuapp.com/tryB.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>manul popup</title>
+
+
+  <style>
+	#c { 
+	
+	  width: 80%;			
+	  margin: auto;
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;		
+		
+	}
+	.link {		
+		color: blue;
+	}
+	
+	.imgDiv{
+		position: relative;
+		
+	}
+	
+	a.ahr{
+		text-decoration:none;
+	}
+
+	#d{
+	    background-color:white;
+		border-radius: 6px;
+		min-width: 200px;	
+		text-align: center;
+		border: 1px;
+		display: none;
+		
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #ddd;
+	
+	    text-shadow: 0 1px 0 #f3f3f3;
+	    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    box-shadow: 0 0 12px rgba(0,0,0,.6);
+	}
+	
+	#overlay{
+	    /*display:none;	    
+	    z-index: 10;
+	    background: #ccc;
+		min-weight: 400px;
+	    min-height: 400px;*/
+		display:none;
+	    height: 100px;
+	    
+	    position: fixed;
+	    z-index: 1;
+	    top: 0;
+	    left: 0;
+	    background-color: rgb(0,0,0);
+	    background-color: rgba(0,0,0, -0.9);	    
+	    
+	}
+
+</style></head>
+<body id="body"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+
+Deriving Faraday's Law<br>
+		
+		Now, we have the experimental result of <span class="link" id="equation2">equation2</span>, 
+	how do we go from this result to the standard form of Farday's Law in <a class="link" id="equation1">equation1</a>? 
+	Well, I'm glad you asked. Let's imagine a simple loop, with a time varying <a class="link" id="B">B</a> 
+
+
+			We know that the rate of change of the total magnetic flux is equal
+			to the opposite of the <a class="link" id="EMF">EMF</a>, or the electric force within the wire.
+			The total magnetic flux is simply the integral (or sum) of the 
+			field over the area enclosed by the wire: field within it: Equation3:
+			
+			
+
+						
+				
+
+		
+	
+
+	<div id="overlay">
+		<div id="d"></div>
+	</div>
+
+	  <script>
+
+
+	 /*var body = document.getElementById('body');
+	 body.addEventListener('click', function(event) {
+	   var d = document.getElementById('d');
+	   d.style.display='none';
+	 });*/
+
+	 var x = document.getElementsByClassName('link');
+	 for (i = 0; i < x.length; i++) {
+	   x[i].addEventListener('click', function(event) {
+	   //event.stopPropagation();
+	   var clickedEl = event.target;
+	   //isnert ms & safari comp code
+	   var ovr = document.getElementById('overlay');
+	   ovr.style.display='block';
+	   ovr.style.position='absolute';
+	   ovr.style.top=event.pageY;
+	   ovr.style.left=event.pageX;	   
+	   
+	   var d = document.getElementById('d');	   
+	   d.style.display='block';
+	   /*d.style.position='absolute';*/
+	   d.style.top=event.pageY;
+	   d.style.left=event.pageX;
+	   
+	   //bhr(clickedEl.id);
+		var d = document.getElementById('d');
+		d.innerHTML='Here'	   
+
+	   
+	 },false);
+	 }
+
+	
+
+	
+	<!-- function dhr(string){ -->
+		
+		<!-- chr(string); -->
+		<!-- var clickedEl = document.activeElement; -->
+		<!-- //clickedEl.click(); -->
+		<!-- bhr(string); -->
+	
+	<!-- } -->
+
+	<!-- function chr(string){ -->
+
+		<!-- var clickedEl = document.getElementById(string).parentElement; -->
+		<!-- clickedEl.addEventListener('click', addClick,false);		 -->
+		<!-- var event = document.createEvent('HTMLEvents'); -->
+		<!-- event.initEvent('click', true, false); -->
+		<!-- clickedEl.dispatchEvent(event);    -->
+		
+	<!-- } -->
+	
+	function addClick(event) {
+
+	   myEvent = event;
+	   var ovr = document.getElementById('overlay');
+	   ovr.style.display='block';
+	   ovr.style.position='absolute';
+	   
+	   
+	   ovr.style.top=event.clientY;
+	   ovr.style.left=event.clientX;
+	    
+
+	   
+	   var d = document.getElementById('d');	   
+	   d.style.display='block';
+	   
+	   d.style.top=event.clientY;
+	   d.style.left=event.clientX;	   
+	   
+ 
+				   
+	}	
+
+	/*function hideOvr() {
+		var ovr = document.getElementById('overlay');
+		var d = document.getElementById('d');
+		ovr.style.display='none';
+		d.style.display='none';
+
+	}*/
+
+	var ovr = document.getElementById('overlay'); 	    
+	ovr.addEventListener('click', function(event) {
+		  if (event.target !== this)
+			    return;
+		  else
+			  {
+				var ovr = document.getElementById('overlay');
+				var d = document.getElementById('d');
+				ovr.style.display='none';
+				d.style.display='none';
+			  }
+			  
+	});
+	
+	<!-- MathJax.Hub.Queue(function () { -->
+		<!-- preloadFormulas(); -->
+	<!-- }); -->
+			  
+  
+
+
+
+
+  </script>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size2, sans-serif;"></div></div></body></html>

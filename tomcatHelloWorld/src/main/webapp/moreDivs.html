@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        Get the coordinates of a mouse click?
+    </title>
+  <style>
+	#c { 
+	
+	  width: 80%;			
+	  margin: auto;
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;		
+		
+	}
+	.link {		
+		color: blue;
+	}
+	
+	.imgDiv{
+		position: relative;
+		
+	}
+	
+	a.ahr{
+		text-decoration:none;
+	}
+
+	#d{
+	    background-color:white;
+		border-radius: 6px;
+		min-width: 200px;	
+		text-align: center;
+		border: 1px;
+		display: none;
+		
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #ddd;
+	
+	    text-shadow: 0 1px 0 #f3f3f3;
+	    -webkit-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    -moz-box-shadow: 0 0 12px rgba(0,0,0,.6);
+	    box-shadow: 0 0 12px rgba(0,0,0,.6);
+	}
+	
+	#dictDiv{
+
+		display:none;
+	    height: 100px;
+	    
+	    position: fixed;
+	    z-index: 1;
+	    top: 0;
+	    left: 0;
+	    background-color: rgb(0,0,0);
+	    background-color: rgba(0,0,0, -0.9);	    
+	    
+	}
+
+</style>	
+</head>
+  
+<body>
+      
+
+      
+    <p>
+        Click on the div element
+        to get pointer coordinates.
+    </p>
+      
+      
+    <p>Check the console for the output.</p>
+      
+    <!-- <canvas width="200" height="200" -->
+        <!-- style="background-color: green"> -->
+    <!-- </canvas> -->
+	
+	<span id="1">&nbsp;
+		<img src="force20.png"/>	
+	</span>
+	<div id="2">&nbsp;
+		<img src="emi.png"/>
+		
+	</div>
+
+	<div id="dictDiv">
+		<div id="d"></div>
+	</div>	
+  
+    <script type="text/javascript">
+        function getMousePosition(div, event) {
+			//clear previous dict div
+			//TODO		
+			let dictDiv = document.getElementById("dictDiv");
+			
+			//Change el coords
+
+			dictDiv.style.display='block';
+			dictDiv.position = "absolute";
+			dictDiv.style.left= event.pageX;
+			dictDiv.style.top= event.pageY;
+			dictDiv.innerHTML = 'Hi there!';	 
+
+            console.log("event.pageX: " + event.pageX, 
+                        "event.pageY: " + event.pageY,
+						"ID:" + div.id);
+	   						
+						
+			//let bodyRect = body.getBoundingClientRect();
+			<!-- console.log("clientX:" + event.clientX, -->
+						<!-- "clientY:" + event.clientY); -->
+        }
+      
+        let div1 = document.getElementById("1");
+		div1.addEventListener("click", function(e)
+			{
+				getMousePosition(div1, e);
+			},false);
+			
+        let div2 = document.getElementById("2");
+		div2.addEventListener("click", function(e)
+			{
+				getMousePosition(div2, e);
+			},false);			
+
+    </script>
+</body>
+  
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        Get the coordinates of a mouse click?
+    </title>
+</head>
+  
+<body>
+      
+
+      
+    <p>
+        Click on the div element
+        to get pointer coordinates.
+    </p>
+      
+      
+    <p>Check the console for the output.</p>
+      
+    <!-- <canvas width="200" height="200" -->
+        <!-- style="background-color: green"> -->
+    <!-- </canvas> -->
+	
+	<div style="overflow:hidden;width=136px;height=26px;">&nbsp;
+		<img src="force20.png"/>
+		
+	</div>
+	<div style="overflow:hidden;width=54px;height=26px;">&nbsp;
+		<img src="emi.png"/>
+		
+	</div>	
+  
+    <script type="text/javascript">
+        function getMousePosition(div, event) {
+            let rect = div.getBoundingClientRect();
+            let x = event.clientX - rect.left;
+            let y = event.clientY - rect.top;
+            console.log("X: " + x, 
+                        "Y: " + y);
+        }
+      
+        let divElem = document.querySelector("div");
+          
+        divElem.addEventListener("mousedown", function(e)
+        {
+            getMousePosition(divElem, e);
+        });
+    </script>
+</body>
+  
+</html>
